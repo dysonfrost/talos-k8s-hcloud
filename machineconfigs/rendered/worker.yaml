@@ -1,0 +1,88 @@
+version: v1alpha1
+debug: false
+persist: true
+machine:
+    type: worker
+    token: ENC[AES256_GCM,data:POo+7/LiS8NGZ9YF+Ooqh98BaUEDhWI=,iv:PkUV2ttDn5F4X6jSYbTa2kn3PbiTFm+zhNjxS6R7GtE=,tag:RspPM3m4DYxG3III4PMiGg==,type:str]
+    ca:
+        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJQakNCOGFBREFnRUNBaEFSTVJUWGo3UjRXREU4Y2MyVVluanhNQVVHQXl0bGNEQVFNUTR3REFZRFZRUUsKRXdWMFlXeHZjekFlRncweU5URXhNamd4TVRBd01qZGFGdzB6TlRFeE1qWXhNVEF3TWpkYU1CQXhEakFNQmdOVgpCQW9UQlhSaGJHOXpNQ293QlFZREsyVndBeUVBMWxWTmc0TXRDVjN3aHR4d0ppTzJCMnZWS1pxQmdOSEZVb2MzClZiZndyR0NqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDaERBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUkKS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVYzJQaDlZLzhTYUlJenhqSApUYWxvdjFsN2lHUXdCUVlESzJWd0EwRUFRcE9wNmdnZVJOejRKQXV3UE44OUVYTkhDYTNVZEZTRllWZHN3Y3NDClM1WWtveU9SY0FaOG5wdGtYdzhVM2VrbzBYSGNveC93L3l5T3N5cjVQYTBPQXc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+        key: ""
+    certSANs: []
+    kubelet:
+        image: ghcr.io/siderolabs/kubelet:v1.34.1
+        defaultRuntimeSeccompProfileEnabled: true
+        nodeIP:
+            validSubnets:
+                - 10.0.0.0/24
+        disableManifestsDirectory: true
+    network: {}
+    install:
+        disk: /dev/sda
+        image: ghcr.io/siderolabs/installer:v1.11.5
+        wipe: false
+    features:
+        rbac: true
+        stableHostname: true
+        apidCheckExtKeyUsage: true
+        diskQuotaSupport: true
+        kubePrism:
+            enabled: true
+            port: 7445
+        hostDNS:
+            enabled: true
+            forwardKubeDNSToHost: true
+cluster:
+    id: vAMSjm_cjmihInPst4LyZq_n2Re9_b2VWzN3hjPY7u8=
+    secret: ENC[AES256_GCM,data:tBK+6X2pKZkKUJ3RIE0YabgxGOCeKk4sVfhAkjhffJ+G5HZBxxatST8IclU=,iv:L24TGn7XtGQCn5732XQf1J4PD7oL4iQi4FGEGCid0DI=,tag:fizXWVTK+GMkj5p8lG7tvw==,type:str]
+    controlPlane:
+        endpoint: https://api.talos.detainedu.com:6443
+    clusterName: talos-k8s-hcloud
+    network:
+        cni:
+            name: none
+        dnsDomain: cluster.local
+        podSubnets:
+            - 10.244.0.0/16
+        serviceSubnets:
+            - 10.96.0.0/12
+    token: ENC[AES256_GCM,data:wVN92xjUUkIddDSKOoKRcRpisNlIjUI=,iv:e5+fc60LMzkYtlOTbDMCpQIVM63YHepIpksPVIcotFA=,tag:ELxsQ00MpRfkU2xNvE90fg==,type:str]
+    ca:
+        crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpVENDQVRDZ0F3SUJBZ0lSQUxMMk8zcTVDQmltNndzMnBNNU5RT2t3Q2dZSUtvWkl6ajBFQXdJd0ZURVQKTUJFR0ExVUVDaE1LYTNWaVpYSnVaWFJsY3pBZUZ3MHlOVEV4TWpneE1UQXdNamRhRncwek5URXhNall4TVRBdwpNamRhTUJVeEV6QVJCZ05WQkFvVENtdDFZbVZ5Ym1WMFpYTXdXVEFUQmdjcWhrak9QUUlCQmdncWhrak9QUU1CCkJ3TkNBQVFqclp0L21lenkwQUdING1mRVBtZWVaaHFxc0Fmdmppd0p1czQyanU3M1RsWXlIcS8yajVZcXdhOVkKcmxsRnR0dEVLMTVKbkJCT21XQTl1aW1KQktvRG8yRXdYekFPQmdOVkhROEJBZjhFQkFNQ0FvUXdIUVlEVlIwbApCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWURWUjBPCkJCWUVGTEdwa0VDTDBlcWo0dVR1MWZsOHF2a2ZJY0cxTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUZqSmVyYzUKT0pKRXlFZWZkRjlPNnozcGV4NFlTTEpncG9KbndOZ0ptaHZtQWlBL01BaTZmc3hXVzNrcEx1Q2ZEblhUTk5BcQo2eWJQUjM4eDcvNlhOcEFLL1E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+        key: ""
+    proxy:
+        disabled: true
+    discovery:
+        enabled: true
+        registries:
+            kubernetes:
+                disabled: true
+            service: {}
+    externalCloudProvider:
+        enabled: true
+sops:
+    lastmodified: "2025-12-01T15:05:44Z"
+    mac: ENC[AES256_GCM,data:pWS/Kn3AaB34brPFxkalvhSVCgwbzjnRlyWvZ3qWUD5TokDTQ8zlqm2nQy/yOz84OEe0RLC/pQrTU6eTw+89heoAhL/Qsc/2eQv7XC72vuIgXr3Fr+FJzUV8VyQc/CwDAmYjmXx10w7Udb2Tjk9btnoVaVzxS95L2sZVj+OexUI=,iv:3GVTmweQ39IQAeJlQeOTiAAflX8DXqzRus+o/IJ//XA=,tag:AkdNjUIoQIa5Mo66ZOADJA==,type:str]
+    pgp:
+        - created_at: "2025-12-01T15:05:44Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA2mLLTvi2YCoAQ//YQ454RpRdoeqlry3IYUwZGvR42hvn5cJmQC5vHQLfTUM
+            iNWsLdRggrn88emROV4PmtasFCvgfm8a4omQH3ft1LEtL9iRXxd3pURyBmdIo/Nj
+            JVy7qKvJXVIt8akgfECd/OlaPkHZJoOOF7qNuB69rEQs6gfA3Oq6ka5LVzFRQ06J
+            7a5zy6uV5iHlGen/jiQdrnSCTKSP4Qdp7ewD7r7biNdTDrq2PWEIPX2WIkUdtN/Y
+            mi3FDqCYf5v/awW63uy4DKE2X4y5V1sky7ppaq8xsDa+CH12o4B+cJVMHBtI5CXv
+            bYJOEK7vMbjpDxbe5wfEGLIgoisYN+1kNZa1LTnQS0BWUd0fQPmAjlxRZGJwWw9c
+            SpykmOsJyr83cgeAms9IogxiJvdU9K7R2KUTnGPcS1xsvp/vJb6Ipe6sqFpKfpG6
+            VYourBeSLMFXHbLfDJhaqBKS/d/4VgjLT3lkFTU91l58+nWam/lJVn090H8mhHsj
+            jImZFL1c02YlKnbCxuLyS48LyEm0qLSAs1oI7isuKfVlMj972x67VrgAtv/RqbSZ
+            FGWUygNV2+5o+3weTqBkFkc8UB/0gvrzNoTIqsBjmUjr/co659stkEtau76vtWzh
+            jhJbjjMa9XGOgTPJX6yJ3liWkDLuXQFV/iWTzxaNeFbzN8OybSSCGfdu6ztAuwrU
+            aAEJAhDlcPRpTASVvhth76+KCb9NJkhFZWTSXiFRkk9Ol/wno5gsBJoO3OqQdeto
+            dIZcaBG04eW/Oxs6NUHEy8sw7BmgZQweAXbbJcGjGqGszBz2RItRmsycP4dw6CXP
+            wPDrhJdHZ2mz
+            =jsd2
+            -----END PGP MESSAGE-----
+          fp: 0FC1070248E009EF18EF8F3A3C17E467E8763D54
+    encrypted_regex: ^(secret|bootstraptoken|secretboxEncryptionSecret|token|key)$
+    version: 3.11.0
