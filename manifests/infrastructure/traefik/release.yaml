@@ -18,3 +18,22 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+    ingressRoute:
+      dashboard:
+        enabled: true
+        matchRule: Host(`dashboard.localhost`)
+        entryPoints:
+          - web
+    ports:
+      web:
+        proxyProtocol:
+          trustedIPs:
+            - 0.0.0.0
+        forwardedHeaders:
+          trustedIPs:
+            - 0.0.0.0
+    gateway:
+      listeners:
+        web:
+          namespacePolicy:
+            from: All
