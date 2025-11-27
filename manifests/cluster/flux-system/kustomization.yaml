@@ -7,3 +7,4 @@ resources:
   - pull-secrets.yaml
   - traefik.yaml
   - podinfo.yaml
+  - external-dns.yaml
