@@ -1,0 +1,48 @@
+# manifests/infrastructure/traefik/cloudflare-token.yaml
+apiVersion: v1
+data:
+  CF_API_TOKEN: ENC[AES256_GCM,data:eh8xgbx2wUf87+UMvJXqpo06jxOtm4cZduhdMpvWYXTtGGwrmt+YOrYo1nSV2ChzYHG6x5tfalE=,iv:GYnwxGTvyfj9gJ044O9iNprVVlZyTHa3OzXdnbOFGCM=,tag:EERY9XALztKviLn5Lt/K2g==,type:str]
+kind: Secret
+metadata:
+  name: cloudflare-token
+  namespace: traefik
+type: Opaque
+sops:
+  lastmodified: "2025-11-27T13:30:02Z"
+  mac: ENC[AES256_GCM,data:tXVcZpB8tGrff4oS8T/zBu8ma3NURWmvC24yaPXuDL24yII5wDoLJO6CM1wzrJufi4kgLw2VX7vffFhIkBZ6lMt27rO7gT0bCB1dPMIpmRVQvAe6KtT4OoIk8Bi6WnjPIWy8xA89W3adDhA8YOStSCZtMSchyUtEmS3iCq7TuBw=,iv:gV2Recz4hy51qZgD4gJxd5Oda8O2ieZ5Q82WglshrYg=,tag:iVDOgSwjZPx5gpYfzG1RcQ==,type:str]
+  pgp:
+    - created_at: "2025-11-27T13:30:02Z"
+      enc: |-
+        -----BEGIN PGP MESSAGE-----
+
+        hF4DD39ke7DWyjoSAQdAzPnjeQ9HmqZG3LdEJcNxNyID4NxaYiEUJUXO773+dQUw
+        BNJGhb3HhzSz1eL4HFk4g4PTuRXRlvglBBTkkVOyhQUHiYYe4WDyzEpCmIxA5k3j
+        1GgBCQIQaVctzXeblPLIwO5GKIODonRbkAUWxZvHTX3iwvetjRhPjWG6VwgiPdci
+        gc8SA1DBPvPh7XJ2JXahkHd7KVy17bvjNFk87+aZW3x1UGGyF0kKjy48d7ROEk+L
+        v2YpxDhLOgGmGw==
+        =OB25
+        -----END PGP MESSAGE-----
+      fp: 36CE22BE4013AB02D13D37429CA6D02C1BFE3F11
+    - created_at: "2025-11-27T13:30:02Z"
+      enc: |-
+        -----BEGIN PGP MESSAGE-----
+
+        hQIMA2mLLTvi2YCoARAAy/dRpag23WWi4f4cXdkPIGikap7UGBEUSnzs9CRyoyHN
+        NIfGiUTu/4KNL7wXIAL/5q1WYALnoP32HEKvJ2gJlMRLBHRZP5D8q7+wb59tNmFB
+        k509P0c0lu9BpRQkgzxTRPZ/UnocIp/78Ax2x5UZivnL5s+GAhBtZ7IO1c+vCM+P
+        dsze4RPldzFjB+OwvDt8LyJN6NgiyXkKxBBhRKl96+x05bE4oEVn0n/Dw7zzFmGW
+        RXIHYBMmDIgBOmp2rUZqamkvVNbbAQNjML7eaBsY5Hs/LSnlO1ghDiUG1d2O1p4/
+        B6JGHULtS5uK8UjEu4E184IYVTTwYP+tOLp5rt3+v8SMZeIKJGgmFp3GovVHYDBT
+        huLG4mfVo3P2G89kvLXtbXEeIcZHv4p8NQyQN6cjm3itaxrZk3TSSaOD9xePc8IZ
+        jNtdbpln1ItdSSY9kbSLjT4JLmwe0z8C693dYuZHGuTV1tUTPZvvU26viE2JXMQY
+        wTHPniE3WDfB24vfixn69uc7ZsNRyd/6I1JfkunorW9mJlog+Oy1TbNrPGrbCT1d
+        294onzJ32+iVKpg9C7mm0uDmRI7wLbUuIpzisOf+jQ+1R1hmo43mVSp+MN7zeSgx
+        vDyS+PxwI2/FwUibW5BiRXUf6hKVa3acgca9tu54r1K7f+WsQfAy5FBPtOnK78nU
+        aAEJAhC8gPIqsV6vv8wFWI89JM46GUi0hhIWQXG20AlkLRZDl2Zgh3lc4jiiFQyP
+        zwTZVp7AAo/mQnO14vRmFl32wyMPM0zxKUKF7LnqyE6+gaYPgY8WBUTuZMnVmBEF
+        DW+L1z+8K3FE
+        =cyEk
+        -----END PGP MESSAGE-----
+      fp: 0FC1070248E009EF18EF8F3A3C17E467E8763D54
+  encrypted_regex: ^(data|stringData)$
+  version: 3.11.0
