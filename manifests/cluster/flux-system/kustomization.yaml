@@ -8,3 +8,4 @@ resources:
   - traefik.yaml
   - podinfo.yaml
   - external-dns.yaml
+  - cert-manager.yaml
