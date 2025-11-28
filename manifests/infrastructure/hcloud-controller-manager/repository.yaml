@@ -1,0 +1,10 @@
+# manifests/infrastructure/hcloud-controller-manager/repository.yaml
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: hcloud
+  namespace: kube-system
+spec:
+  interval: 5m0s
+  url: https://charts.hetzner.cloud
