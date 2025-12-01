@@ -59,3 +59,9 @@ spec:
         load-balancer.hetzner.cloud/use-private-ip: "true"
       loadBalancerSourceRanges:
         - 0.0.0.0/0
+
+    logs:
+      general:
+        level: INFO
+      access:
+        enabled: true
