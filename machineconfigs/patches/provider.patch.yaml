@@ -1,0 +1,4 @@
+# provider.yaml
+cluster:
+  externalCloudProvider:
+    enabled: true
