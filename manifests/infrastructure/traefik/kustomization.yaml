@@ -7,6 +7,3 @@ resources:
   - release.yaml
   - namespace.yaml
   - gateways.yaml
-  - cloudflare-token.yaml
-  - issuer.yaml
-  - certificate.yaml

@@ -1,11 +1,11 @@
-# manifests/infrastructure/traefik/cloudflare-token.yaml
+# manifests/infrastructure/cert-manager/cloudflare-token.yaml
 apiVersion: v1
 data:
   CF_API_TOKEN: ENC[AES256_GCM,data:eh8xgbx2wUf87+UMvJXqpo06jxOtm4cZduhdMpvWYXTtGGwrmt+YOrYo1nSV2ChzYHG6x5tfalE=,iv:GYnwxGTvyfj9gJ044O9iNprVVlZyTHa3OzXdnbOFGCM=,tag:EERY9XALztKviLn5Lt/K2g==,type:str]
 kind: Secret
 metadata:
   name: cloudflare-token
-  namespace: traefik
+  namespace: cert-manager
 type: Opaque
 sops:
   lastmodified: "2025-11-27T13:30:02Z"

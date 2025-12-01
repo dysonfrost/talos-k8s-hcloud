@@ -18,27 +18,32 @@ spec:
     providers:
       kubernetesGateway:
         enabled: true
+
     ingressRoute:
       dashboard:
         enabled: true
+        insecure: false
         matchRule: Host(`dashboard.localhost`)
         entryPoints:
           - traefik
+
     ports:
       web:
+        nodePort: 30080
         expose:
           default: true
           internal: true
-        proxyProtocol:
-          trustedIPs:
-            - 10.0.0.2
-        forwardedHeaders:
-          trustedIPs:
-            - 10.0.0.2
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
       websecure:
+        nodePort: 30443
         expose:
           default: true
           internal: true
+
     service:
       enabled: true
       single: true
@@ -49,12 +54,3 @@ spec:
         load-balancer.hetzner.cloud/use-private-ip: "true"
       loadBalancerSourceRanges:
         - 0.0.0.0/0
-    gateway:
-      listeners:
-        web:
-          namespacePolicy:
-            from: All
-    tlsStore:
-      default:
-        defaultCertificate:
-          secretName: wildcard-talos-detainedu-com-tls

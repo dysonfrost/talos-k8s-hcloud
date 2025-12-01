@@ -1,4 +1,4 @@
-# manifests/infrastructure/cilium/kustomization.yaml
+# manifests/infrastructure/cert-manager/kustomization.yaml
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -6,3 +6,6 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
+  - cloudflare-token.yaml
+  - cluster-issuer.yaml
+  - certificates.yaml

@@ -1,4 +1,4 @@
-# manifests/infrastructure/cert-manager/certificate.yaml
+# manifests/infrastructure/cert-manager/certificates.yaml
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -12,4 +12,4 @@ spec:
     - "*.talos.detainedu.com"
   issuerRef:
     name: cloudflare
-    kind: Issuer
+    kind: ClusterIssuer

@@ -4,7 +4,9 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: traefik-gateway
-  namespace: default
+  namespace: traefik
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare
 spec:
   gatewayClassName: traefik
   listeners:
@@ -13,4 +15,15 @@ spec:
       port: 8000
       allowedRoutes:
         namespaces:
-          from: Same
+          from: All
+    - name: websecure
+      protocol: HTTPS
+      port: 8443
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - kind: Secret
+            name: wildcard-talos-detainedu-com-tls
