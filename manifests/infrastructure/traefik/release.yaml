@@ -16,8 +16,13 @@ spec:
       version: 37.4.0
   values:
     providers:
+      kubernetesIngress:
+        enabled: false
       kubernetesGateway:
         enabled: true
+
+    ingressClass:
+      enabled: false
 
     ingressRoute:
       dashboard:
