@@ -1,12 +1,10 @@
 # manifests/apps/podinfo/repository.yaml
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
+kind: HelmRepository
 metadata:
   name: podinfo
   namespace: default
 spec:
-  interval: 30s
-  ref:
-    branch: master
-  url: https://github.com/stefanprodan/podinfo
+  interval: 5m0s
+  url: https://stefanprodan.github.io/podinfo
