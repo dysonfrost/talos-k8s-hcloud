@@ -1,0 +1,59 @@
+# manifests/infrastructure/renovate/release.yaml
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: renovate
+  namespace: renovate
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: renovate
+      version: "45.26.4"
+      sourceRef:
+        kind: HelmRepository
+        name: renovate
+        namespace: renovate
+      interval: 1m
+  values:
+    cronjob:
+      schedule: "0 9 * * 1"
+    renovate:
+      config: |-
+        {
+          "extends": ["config:recommended"],
+          "labels": ["renovate", "dependencies"],
+          "platform": "github",
+          "repositories": ["dysonfrost/talos-k8s-hcloud"],
+          "kubernetes": {
+            "managerFilePatterns": [
+              "^manifests/.+\\.yaml$",
+              "^manifests/cluster/apps/.+\\.yaml$",
+              "^manifests/cluster/infrastructure/.+\\.yaml$",
+            ]
+          },
+          "flux": {
+            "managerFilePatterns": [
+              "^manifests/.+\\.yaml$",
+              "^manifests/cluster/flux-system/.+\\.yaml$",
+              "^manifests/cluster/apps/.+\\.yaml$",
+              "^manifests/cluster/infrastructure/.+\\.yaml$"
+            ]
+          }
+        }
+      securityContext:
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        seccompProfile:
+          type: RuntimeDefault
+        capabilities:
+          drop:
+            - ALL
+    envFrom:
+      - secretRef:
+          name: renovate-env
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
