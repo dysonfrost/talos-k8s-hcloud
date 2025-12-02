@@ -1,48 +1,33 @@
 # manifests/infrastructure/external-dns/cloudflare-token.yaml
 apiVersion: v1
 data:
-  CF_API_TOKEN: ENC[AES256_GCM,data:eh8xgbx2wUf87+UMvJXqpo06jxOtm4cZduhdMpvWYXTtGGwrmt+YOrYo1nSV2ChzYHG6x5tfalE=,iv:GYnwxGTvyfj9gJ044O9iNprVVlZyTHa3OzXdnbOFGCM=,tag:EERY9XALztKviLn5Lt/K2g==,type:str]
+    CF_API_TOKEN: ENC[AES256_GCM,data:7j+yTOgDKGwXW+7JMzj6wnxSSahSi3l5xKs3scExKGQxoQ3b+gMucMwYeliBPxRqh3CA1SlFfho=,iv:rqey7nt+RhITAf3Z3nk7HXXYk81KXct2/Hjw5vBE2yw=,tag:3q1uEPPMVPHDTrOn7vZeBw==,type:str]
 kind: Secret
 metadata:
-  name: cloudflare-token
-  namespace: external-dns
+    name: cloudflare-token
+    namespace: external-dns
 type: Opaque
 sops:
-  lastmodified: "2025-11-27T13:30:02Z"
-  mac: ENC[AES256_GCM,data:tXVcZpB8tGrff4oS8T/zBu8ma3NURWmvC24yaPXuDL24yII5wDoLJO6CM1wzrJufi4kgLw2VX7vffFhIkBZ6lMt27rO7gT0bCB1dPMIpmRVQvAe6KtT4OoIk8Bi6WnjPIWy8xA89W3adDhA8YOStSCZtMSchyUtEmS3iCq7TuBw=,iv:gV2Recz4hy51qZgD4gJxd5Oda8O2ieZ5Q82WglshrYg=,tag:iVDOgSwjZPx5gpYfzG1RcQ==,type:str]
-  pgp:
-    - created_at: "2025-11-27T13:30:02Z"
-      enc: |-
-        -----BEGIN PGP MESSAGE-----
-
-        hF4DD39ke7DWyjoSAQdAzPnjeQ9HmqZG3LdEJcNxNyID4NxaYiEUJUXO773+dQUw
-        BNJGhb3HhzSz1eL4HFk4g4PTuRXRlvglBBTkkVOyhQUHiYYe4WDyzEpCmIxA5k3j
-        1GgBCQIQaVctzXeblPLIwO5GKIODonRbkAUWxZvHTX3iwvetjRhPjWG6VwgiPdci
-        gc8SA1DBPvPh7XJ2JXahkHd7KVy17bvjNFk87+aZW3x1UGGyF0kKjy48d7ROEk+L
-        v2YpxDhLOgGmGw==
-        =OB25
-        -----END PGP MESSAGE-----
-      fp: 36CE22BE4013AB02D13D37429CA6D02C1BFE3F11
-    - created_at: "2025-11-27T13:30:02Z"
-      enc: |-
-        -----BEGIN PGP MESSAGE-----
-
-        hQIMA2mLLTvi2YCoARAAy/dRpag23WWi4f4cXdkPIGikap7UGBEUSnzs9CRyoyHN
-        NIfGiUTu/4KNL7wXIAL/5q1WYALnoP32HEKvJ2gJlMRLBHRZP5D8q7+wb59tNmFB
-        k509P0c0lu9BpRQkgzxTRPZ/UnocIp/78Ax2x5UZivnL5s+GAhBtZ7IO1c+vCM+P
-        dsze4RPldzFjB+OwvDt8LyJN6NgiyXkKxBBhRKl96+x05bE4oEVn0n/Dw7zzFmGW
-        RXIHYBMmDIgBOmp2rUZqamkvVNbbAQNjML7eaBsY5Hs/LSnlO1ghDiUG1d2O1p4/
-        B6JGHULtS5uK8UjEu4E184IYVTTwYP+tOLp5rt3+v8SMZeIKJGgmFp3GovVHYDBT
-        huLG4mfVo3P2G89kvLXtbXEeIcZHv4p8NQyQN6cjm3itaxrZk3TSSaOD9xePc8IZ
-        jNtdbpln1ItdSSY9kbSLjT4JLmwe0z8C693dYuZHGuTV1tUTPZvvU26viE2JXMQY
-        wTHPniE3WDfB24vfixn69uc7ZsNRyd/6I1JfkunorW9mJlog+Oy1TbNrPGrbCT1d
-        294onzJ32+iVKpg9C7mm0uDmRI7wLbUuIpzisOf+jQ+1R1hmo43mVSp+MN7zeSgx
-        vDyS+PxwI2/FwUibW5BiRXUf6hKVa3acgca9tu54r1K7f+WsQfAy5FBPtOnK78nU
-        aAEJAhC8gPIqsV6vv8wFWI89JM46GUi0hhIWQXG20AlkLRZDl2Zgh3lc4jiiFQyP
-        zwTZVp7AAo/mQnO14vRmFl32wyMPM0zxKUKF7LnqyE6+gaYPgY8WBUTuZMnVmBEF
-        DW+L1z+8K3FE
-        =cyEk
-        -----END PGP MESSAGE-----
-      fp: 0FC1070248E009EF18EF8F3A3C17E467E8763D54
-  encrypted_regex: ^(data|stringData)$
-  version: 3.11.0
+    age:
+        - recipient: age1f4678pd55d3a4usf5qln6yslq7lawvy0ykzkqm6hm2j96eu2p34q8x9wg8
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBPNHFYQUh4Vk85bitYaFVD
+            ZGZLWUxmdTV5MnZSZlVKdXp5THpTWkd5aVI4Cnd3MXAva3lxRTgzKzRiWTdQY0Mx
+            MG5rcnZYeXFEMkhmMmtkYTZTZTdpbncKLS0tIGM0b2dQZDBrTENPYThNMFllSm5n
+            dzludi9WakM5TnpEZFk4YmVCU2pFWjAKStnuopyL6KpeDwe7G3Bk3CridD+JQKL8
+            JramqS6sTVAGwFheT1v2KcFoKNAjjhBTIzTIsDGOqr4EqnzFHSJlSg==
+            -----END AGE ENCRYPTED FILE-----
+        - recipient: age14dxvrdmtyp37gmmcqg28uftsujp6scj0p6zelgu3ctr3sky52usq7767jq
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBlSzNGcEp6N3JuQ0JQWmxl
+            cVo1SlVWNjAyS29yMXlubEFJM1hNWExSNFVJCkViQlVWbEZza25yU2FJeUV0bEs0
+            WlZTVXV6elRiUDJheWhiSm5GVDJoNWMKLS0tIEZhanBrM1hJQ1NISTh0MUQxSi9o
+            ZG5RUXRjL1pyS2lOVTliczluNkYwZjQKIotn9VW1iH/EEpUISQsal1qNbXfJAjCV
+            fbOc76/FAhkyM6Ia/QdoUlLGp5oCSYapnzMWHKRbs1IsaFnREtWUJg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-12-02T10:05:48Z"
+    mac: ENC[AES256_GCM,data:DuBiFuQH4z6WVSR1jGMsLrVldqyrVG39RNvFqMdBE2oEsjhJCmMM+LGZrR7QcNfsS8Xj3Bl2Q8MsNDqgUGds7EZU95rVg1uEEa7nXOEel0ODrwBOVYIlH1HklZDDXoSOEhlEb1uImWUkiWrSe72Jc4bCY13tFLl0H4yFni7oUi0=,iv:62f7tvI4KTEMAoyPpTbdYjxt1agQdcMrjwgxshKpxto=,tag:TIwCw36k8w9lhajxNuE6uw==,type:str]
+    encrypted_regex: ^(data|stringData)$
+    version: 3.11.0

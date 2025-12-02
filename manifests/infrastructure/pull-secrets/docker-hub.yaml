@@ -1,47 +1,32 @@
 apiVersion: v1
 data:
-    .dockerconfigjson: ENC[AES256_GCM,data:8OALKNwPDh6kFmNJE8o4+GOv0RJZHY2R4SwPV5P96vOwtib7C6Y5n6ph1P/95E2UI6X4Rat7ROH6Hz9SwR/kwDjL63srTBjirCV6uSvqoJQ6hkxkSUMLswt0SVRrGJQySp+BEegkSpDanm/sx0RyJWH8rRKlyO8nnFa8FFkAQs2Rf7Zl0+fvTkwU48+CdCssiWiy9zSjS9AjjvQJ8MQ4RUj3Is/LZ3BpPxCq23aTBf/l0aLQ8X0rlG9Vm+ZvZaq7xxgLM4LG0ZPX/y8T9PlsuW6Y30G8ACcrBucRwCo+od9l5Pm4gj47SxPEW0BPvyYdUAjFNbDedM4=,iv:fNX12Q98V5at/TynWXGMy5JqJC9Rz/H4fQhD2gmTRa4=,tag:3AKdlfFolrGinkPdieKvpQ==,type:str]
+    .dockerconfigjson: ENC[AES256_GCM,data:3y7h2dNGVe8zDR3LthbewOF9ajJRIEMCFrao6+7CcTlY1eznPINwwIteWlvY0tbBAvFw+6dQ+mGCNNqgPFs5xse9ygYHzYtzvaucCzNtRHvygJw8xd2EkTfpgnas8czx0h4e7L+v1GY3zIAGwm5CSp6CvifqFH8ITzQtnmg3fWHU8CnrgLcmw93K17r7Bk3UU8cb2aewAJbSUU3echWJUG3t8WOq21XZv2hcLu+ZQzQtRhr7/i/5GJ8wC2OWxZyi6iSdotJaVStGH73kmODH8Kx7WPYSzqKXecUTinkzgylSm4QAKa7uyxUWfg8NkpluuA+I+dcJFj0=,iv:S3Z5K2+ZypP5QCMEPRoigscQOR7n3vYBPsRUxpVHpK8=,tag:HTeWhz/6x6Nrk+nqGVl+uA==,type:str]
 kind: Secret
 metadata:
     name: my-super-docker-hub-pull-secret
     namespace: default
 type: kubernetes.io/dockerconfigjson
 sops:
-    lastmodified: "2025-11-24T16:28:30Z"
-    mac: ENC[AES256_GCM,data:AyA8/+DgwjXW+y3htk/NH+OKcBUdiWX9eFSUa7dZk1osaDZ/thv5G0HN4Sg415Rku2OrhhfLIduUHZglnVe974xloKIkjr/itpk4sOszmbyic441zisvJtZHtntPxaoqKxnCg2ykSwcBkworKO2NIqHHcgnKl0nVXXczu+vPkBQ=,iv:tzq+EmDcIj/Q8XGn9beRWF/oHsD00NBadEm6stSXdXA=,tag:Yomr8dJm9vTxqgFiZnjQOw==,type:str]
-    pgp:
-        - created_at: "2025-11-24T16:28:30Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
-
-            hF4DD39ke7DWyjoSAQdAvFIkl36xExAwQhdifOUPX8M0UzHb4ojGLgoTY8rLV3ow
-            7wvFvDCq44Y/Z21SZwCL1T9ucuq/8xwp4zRW1m7gXVShkWYT3gh+3BO47RlMDNl8
-            1GYBCQIQw3nuYs7M6vBIv2Z902dEefYnFnBjG/7QQlzB3dpnjAUg6dTr7oMWc+6/
-            ayYCFpPEHXj2NYlOHcglAdWy4RarkHsuVONdoWqhW1cS6/rHMbxvBK5eLdWpjohh
-            gs1H6xfQih4=
-            =cWg2
-            -----END PGP MESSAGE-----
-          fp: 36CE22BE4013AB02D13D37429CA6D02C1BFE3F11
-        - created_at: "2025-11-24T16:28:30Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA2mLLTvi2YCoAQ//ba8a5/MSEyJbd561uNvHkWvOwoi1GFbkjOxU604sGUvY
-            5lduxoKNUYK3dXAO9BuVfjRmDevw3eAaudJlLMjtGf2cPJV4nF/86XqUBNJEExTj
-            bWMMBi7L4SUf5P+3tt/3maQGnhWAOdfDFdNT/K/h1rmf+V+3A8t/JGOedNRJkUy1
-            zrCPXueQAEaEV1ImLD97OCoAaQXqPs62ei1JUYJ3Li1MdWs2TT9bQr/Simksy+ax
-            90EaOru/QXMTWQRpQJG9ri39Aju/ICy9V5ZY8uf0UFF0Z2iFoQomOm9HiSj1Pe65
-            ruHt2blXE6tevf5z3cktiJvLuF8u6VCNxVb7+/yXU1beGgFOPoXQf1Y7lBS4Os6d
-            jVb8by8+KPlDBG1J01kGlFp4sbTFaDGNhmb3aC+cS/g9136oqRG2vThbhk4QsKVr
-            14w07RuIgmaUNo45lka2KhJTnD32CmIO3HxpUWy+wlw/24DcHEzy08TWcvy3pSwo
-            Om04FwyAqQ6ODPjLhvwzrl/f2bCQg+CFfpjiUCUZIqqw/2BFqhT3em71K8kEX4qg
-            QeYfJ7hNJwoxfJKk6693PVLhLMnlOgPuq4MPK3BwbMiZXBFXbnyklD3TCQSZszYL
-            OY8eLQZQg5O+Z+KoElxo4K+S9gtilv/QTr/uUWtqadf8sPPzSwgua2UQwpbYJUzU
-            ZgEJAhA2AEus8Lg+T1cWkwA4jgZzuukv7XhFdY0t0BjkuodLEVl+CNVbiQBauq/9
-            QDTSn8XPIiRuh2P+jE/dLmGWGIe6qI8v+y54SXrTHGXvaL1lzSIt8vOLR1XY33SY
-            gK1AQwttFQ==
-            =ETxu
-            -----END PGP MESSAGE-----
-          fp: 0FC1070248E009EF18EF8F3A3C17E467E8763D54
+    age:
+        - recipient: age1f4678pd55d3a4usf5qln6yslq7lawvy0ykzkqm6hm2j96eu2p34q8x9wg8
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIVUZPanZEak5ibjJMVmo2
+            K1ZLQmVuc2Rybmc4V2c5ZlpWWjVvS3ZCYkdnClhSa1RJc2lTWUpOK1ZybFc1ZEVx
+            UHA3SUQreEp6aDVXWnVsOVFLOFh3LzAKLS0tIGt6RzRjY0l0bHUybWxlZGZYaVJh
+            L3FMemI5YktaWnBxZndiM2R1VVB0a2MKECf5dSdzR46IM41yNzOA+tMK5RIlAe5l
+            nS9of9wXjeL40QD1HeH58MtYaSo7OeR4Sz610RQjuUZWiEn6VBtn+A==
+            -----END AGE ENCRYPTED FILE-----
+        - recipient: age14dxvrdmtyp37gmmcqg28uftsujp6scj0p6zelgu3ctr3sky52usq7767jq
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqMWtGdnBaSEcvbFU4Vnpr
+            dGtkclllQW0xSFArT3FhL0tNZmFCTUNxeGs4ClU2UWZKeXpiZTFSVW80SmRhZzg3
+            NEdHTm8xL2haWGU3b0MrQW5ETGlQbUUKLS0tIE9acTd5TDB1SENPSFdRNStBUXBI
+            VGFQNGVHRjRyTU10dktXby9SbTB4WVUKhb9gDu2yKKkzY/a+Eai5mlblawr+06L/
+            RhyoFsVWqjpNaQr4y0TLhB6Y/leu1Ukb2C8l9DcFiSMp4FQdxR5X+w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-12-02T10:06:28Z"
+    mac: ENC[AES256_GCM,data:QrLg1aQV8ou9zzT8B9So+romXaV1AZRdu6/UJQnmyF6BBoGnG8wZQ9i4zA/2e3V2o0fXTritTcmEtqTA0JzKo9taNUIaxvdF1pjlWu2B82x6tuTEfrArHiuPC5FjbWPV7okBOxa+xSdRmO/0HdvRnvDAVy+sxpmwaBWUgDoI5JM=,iv:4NyRaK1i3QgLgiHJIfcZ55C8qp0QPBrAaeDEbv2E/oo=,tag:B8uj3G2mDEsFG/00Oe5caA==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.11.0
