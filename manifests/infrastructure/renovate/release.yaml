@@ -22,16 +22,10 @@ spec:
     renovate:
       config: |-
         {
-          "extends": ["config:recommended"],
+          "extends": ["config:best-practices"],
           "labels": ["renovate", "dependencies"],
           "platform": "github",
-          "repositories": ["dysonfrost/talos-k8s-hcloud"],
-          "kubernetes": {
-            "fileMatch": ["^manifests/.+\\.yaml$"]
-          },
-          "flux": {
-            "fileMatch": ["^manifests/.+\\.yaml$"]
-          }
+          "repositories": ["dysonfrost/talos-k8s-hcloud"]
         }
       securityContext:
         runAsNonRoot: true
