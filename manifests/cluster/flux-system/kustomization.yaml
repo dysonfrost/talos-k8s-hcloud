@@ -10,3 +10,4 @@ resources:
   - external-dns.yaml
   - cert-manager.yaml
   - hcloud-controller-manager.yaml
+  - renovate.yaml
