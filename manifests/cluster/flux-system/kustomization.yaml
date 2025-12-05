@@ -11,3 +11,4 @@ resources:
   - cert-manager.yaml
   - hcloud-controller-manager.yaml
   - renovate.yaml
+  # - openobserve.yaml
