@@ -1,0 +1,6 @@
+# manifests/infrastructure/rustfs/namespace.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rustfs
