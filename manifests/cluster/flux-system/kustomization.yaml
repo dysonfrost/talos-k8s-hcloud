@@ -12,4 +12,5 @@ resources:
   - hcloud-controller-manager.yaml
   - renovate.yaml
   - local-path-provisioner.yaml
+  - rustfs.yaml
   # - openobserve.yaml
