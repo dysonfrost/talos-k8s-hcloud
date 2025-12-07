@@ -1,0 +1,23 @@
+# manifests/infrastructure/openobserve/httproute.yaml
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: openobserve-webui
+  namespace: openobserve
+spec:
+  parentRefs:
+    - name: traefik-gateway
+      namespace: traefik
+      sectionName: websecure
+      kind: Gateway
+  hostnames:
+    - obs.talos.detainedu.com
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: openobserve-openobserve-standalone
+          port: 5080

@@ -7,4 +7,5 @@ resources:
   - secrets.yaml
   - repository.yaml
   - release.yaml
+  - httproute.yaml
   - https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.140.0/opentelemetry-operator.yaml
