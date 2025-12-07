@@ -26,22 +26,6 @@ spec:
       ZO_S3_BUCKET_NAME: obs-talos-detainedu-com
     persistence:
       enabled: false
-      # size: 5Gi
-    # ingress:
-    #   enabled: true
-    #   className: "traefik"
-    #   annotations:
-    #     cert-manager.io/issuer: null
-    #     cert-manager.io/cluster-issuer: cloud
-    #   hosts:
-    #     - host: obs.talos.detainedu.com
-    #       paths:
-    #         - path: /
-    #           pathType: ImplementationSpecific
-    #   tls:
-    #     - secretName: obs.talos.detainedu.com-tls
-    #       hosts:
-    #         - obs.talos.detainedu.com
     extraEnv:
       - name: ZO_ROOT_USER_EMAIL
         valueFrom:

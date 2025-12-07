@@ -2,7 +2,7 @@
 ---
 creation_rules:
   - path_regex: manifests/.*.yaml
-    encrypted_regex: ^(data|stringData)$
+    encrypted_regex: ^(data|stringData|Authorization)$
     age: >-
       age1f4678pd55d3a4usf5qln6yslq7lawvy0ykzkqm6hm2j96eu2p34q8x9wg8,
       age14dxvrdmtyp37gmmcqg28uftsujp6scj0p6zelgu3ctr3sky52usq7767jq

@@ -1,0 +1,53 @@
+# manifests/infrastructure/openobserve/collector.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: openobserve-collector
+    namespace: openobserve
+spec:
+    interval: 5m
+    chart:
+        spec:
+            chart: openobserve-collector
+            version: 0.4.1
+            sourceRef:
+                kind: HelmRepository
+                name: openobserve
+                namespace: openobserve
+            interval: 1m
+    values:
+        k8sCluster: talos-k8s-hcloud
+        exporters:
+            otlphttp/openobserve:
+                endpoint: http://openobserve-openobserve-standalone.openobserve.svc.cluster.local:5080/api/default/
+                headers:
+                    Authorization: ENC[AES256_GCM,data:2ybrz9M5oKVsRO4KDfmVsbC0cCEvYBU3c9nCAG0PJ1SqcpDM+YBOvJ7VyEMtKhWkW01F/7E+KX7n050kuZ73AGURjEpx22rvqtY=,iv:BpNgIBNV/VdfaIdWE79AC3lw+VkxyqSfqzLynloTfJY=,tag:AbkV6fw/yU+DMYAO33WBOA==,type:str]
+            otlphttp/openobserve_k8s_events:
+                endpoint: http://openobserve-openobserve-standalone.openobserve.svc.cluster.local:5080/api/default/
+                headers:
+                    Authorization: ENC[AES256_GCM,data:+LRfUv0rEUbbFIEHA7fnmL5J2iG8hEXtIqIOMXz3ehUQEq5VPzLJKnUDQkYdTD3e5SsA3UCttWrb60JaLXriRb3hBQy5VCrxS30=,iv:8i4DtmIPR4Apj4wlKwOUPHz7M4YwbA2nV0PrQpPnkys=,tag:rvkVjF856oXrd2agA1Nvaw==,type:str]
+                    stream-name: k8s_events
+sops:
+    age:
+        - recipient: age1f4678pd55d3a4usf5qln6yslq7lawvy0ykzkqm6hm2j96eu2p34q8x9wg8
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSckg4MUdUc3VlN1FKVGlq
+            cDNQam4rRElCTjFjRnQ3d0Q0QWRsd1BmNGpBCnQvdnBrankrRWF1SVlMVnJpUmhU
+            R1ViNFBJcjRYOFN2c3Q4ZW9lYkRzbEUKLS0tIGhPaXZwNnlzQjliVHFWS2puck5H
+            ekJpRE1ua1I4Y3NtMkpMVm4wM080dEkKw6VDXFKvklhKJ/MBYfQPHYcGvYIkaypJ
+            NsnfbJ1ufXUnihstgIYi1OuaDkWOjK+DkCA2IwscHCNIt2K0D2O4sg==
+            -----END AGE ENCRYPTED FILE-----
+        - recipient: age14dxvrdmtyp37gmmcqg28uftsujp6scj0p6zelgu3ctr3sky52usq7767jq
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBlMTI4MnRTQW1GeS9ycjRH
+            NkkwcGlVaG8zQmw1eEJXZEZIbEJFRWlXQ3kwCm5FU3FFUEhLWW15dWFkVG10YjBS
+            UVAyVXNFZGIyT3BjZVJQc0ZLV3FOVkUKLS0tIDVqT203b3J5WXJ3WEZWTHpWaGN3
+            UHBNUU13YmF0SVJRS3BFbnpaeUZRajAKQzEzVrL1Eg2U/nqbK8FuftU01wwPQp7x
+            BzcP7sL6AscM6w0bgdshiACpXLQ6jaaF/ndR0fIUkdKvkZmW3qSgdw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-12-07T18:06:07Z"
+    mac: ENC[AES256_GCM,data:kL46MzseYyDpWe/xfB5gmsi0B8QZG2Sfphr1rJo6K0A64Ej+ykjkwtwA+ICtJHHKskEJs2Af6rNcMli/0XkMQFM/XlK4ccixkA4K4Iup0rijtguKsFpEYMfxLVSqvbb4n7bf03bsKWQ3Cr/DgMwYaLVNFVMEBeGevcj5cLzqqsY=,iv:IoSu7Cn8dzKJRVXAUKSmxpTO3XuejW6f2/X2GN5DrW0=,tag:rgn8/o47iXSUhbESAuQTyw==,type:str]
+    encrypted_regex: ^(data|stringData|Authorization)$
+    version: 3.11.0
