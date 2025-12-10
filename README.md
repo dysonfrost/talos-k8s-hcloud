@@ -12,7 +12,22 @@ This repository contains Talos machine configurations, cluster manifests, and li
 - **GitOps-driven cluster operation** — cluster state (node configs, Kubernetes manifests, add-ons) is driven by Git, enabling traceability, rollbacks, and auditability.
 - **Best-practice Kubernetes setup** — designed for production-grade deployments, with the ability to extend with networking, storage, backups, metrics, etc.
 
-## What's inside
+## Overview
+
+The cluster is provisioned on Hetzner Cloud and consists of:
+
+- [Talos Linux](https://www.talos.dev) for an immutable, API-driven operating system
+- [FluxCD](https://fluxcd.io/) GitOps for continuous reconciliation of all Kubernetes resources
+- [SOPS](https://github.com/getsops/sops) + [AGE](https://github.com/FiloSottile/age) for secure, encrypted secret management
+- A tooling container to provide a reproducible operations environment
+- [OpenObserve](https://openobserve.ai) for centralized logs, metrics, and traces
+- [Local Path Provisioner](https://github.com/rancher/local-path-provisioner) for dynamic storage provisioning
+- [RustFS](https://github.com/rustfs/rustfs) for additional storage capabilities
+- [RenovateBot](https://github.com/renovatebot/renovate) for automated dependency and image updates
+
+This repository serves as the single source of truth for cluster state.
+
+## Repository structure
 
 ```
 /
@@ -20,13 +35,20 @@ This repository contains Talos machine configurations, cluster manifests, and li
 ├── manifests/        # Kubernetes manifests and optional add-ons
 ├── packer/           # Packer templates to build Talos images
 ├── tools/            # Small utility scripts used during provisioning and maintenance
-├── justfile          # Runs a portable containerized tool environment
 ├── .sops.yaml        # Secrets encryption config
-├── secrets.yaml      # Talos secrets bundle file
+├── justfile          # Runs a portable containerized tool environment
 ├── kubeconfig        # Encrypted kubeconfig for cluster access
+├── renovate.json     # Schema for Renovate bot
+├── secrets.yaml      # Talos secrets bundle file
 ├── talosconfig       # Encrypted Talos config for talosctl
 └── README.md
 ```
+
+## Requirements
+
+- Hetzner Cloud API Token
+- age private key for SOPS decryption
+- Docker (for tooling container)
 
 ## `just` — portable tool environment
 
