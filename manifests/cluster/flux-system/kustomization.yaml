@@ -13,4 +13,4 @@ resources:
   - renovate.yaml
   - local-path-provisioner.yaml
   - rustfs.yaml
-  - openobserve.yaml
+  # - openobserve.yaml
