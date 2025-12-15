@@ -1,5 +1,5 @@
 # This file is responsible to setup a toolset to containerize the work environment.
-FROM debian:bookworm-slim@sha256:b4aa902587c2e61ce789849cb54c332b0400fe27b1ee33af4669e1f7e7c3e22f AS installer
+FROM debian:bookworm-slim@sha256:e899040a73d36e2b36fa33216943539d9957cba8172b858097c2cabcdb20a3e2 AS installer
 
 # Binaries version
 ARG KUBECTL_VERSION=v1.34.1
